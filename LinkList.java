@@ -112,6 +112,29 @@ public class LinkList {
 
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // example 1 solution
     void OddAndEven(){
         Node tail = list;
@@ -153,8 +176,55 @@ public class LinkList {
         
     }
   
+    // final homework q1
+    void movelist(LinkList list1){
+        LinkList list2 = new LinkList();
+        LinkList list3 = new LinkList();
+        int count1 = 0;
+        int count2 = 0;
+        list2.CreateList();
+        list3.CreateList();
+        
+        Node ptr = list1.list;
+        
+        while(ptr!=null){
+            if(ptr.no >= 0)
+                count1++;
+            else
+                count2++;
+            
+            ptr = ptr.next;
+        }
+        
+        if(count1 > count2){
+            while(ptr!=null){
+                list2.InsertElement(ptr.no, ptr.name, ptr.mark);
+                ptr = ptr.next;
+            }
+            list1.DestroyList();
+            list2.PrintList();
+        }
+        else{
+            while(ptr!=null){
+                list3.InsertElement(ptr.no, ptr.name, ptr.mark);
+                ptr = ptr.next;
+            }
+            list1.DestroyList();
+            list3.PrintList();
+        }
+        
+        
+    }
     
-    
+    void studentcheck(LinkList stdlist){
+        Node ptr = stdlist.list;
+        while(ptr!=null){
+            if(ptr.mark > 3)
+                stdlist.DeleteElement(ptr.no);
+        }
+        
+        stdlist.PrintList();
+    }
 
     
     

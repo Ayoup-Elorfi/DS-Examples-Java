@@ -73,7 +73,7 @@ public class Main {
                     System.exit(0);
                     
                 case 7:
-                    list1.DeleteEndOrStart(20);
+                    list1.movelist(list1);
                     break;
                     
                 default: 
